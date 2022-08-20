@@ -1,6 +1,6 @@
 
 import Forgot from "../../models/Forgot"
-import User from '../../models/User'
+// import User from '../../models/User'
 
 export default async function handler(req, res) {
     if (req.body.sendMail) {

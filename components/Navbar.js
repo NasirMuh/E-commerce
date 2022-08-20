@@ -61,8 +61,6 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromToCart, clearCart, su
             <Link href={'/tshirt'} ><a className="mr-5 hover:text-gray-900">T Shirts</a></Link>
             <Link href={'/hoodies'} ><a className="mr-5 hover:text-gray-900">Hoodies</a></Link>
 
-            <Link href={'/Practice'} ><a className="mr-5 hover:text-gray-900">Practice</a></Link>
-
           </nav>
           {/* <div ref={ref} className={`sideCart absolute z-10 right-0 top-0 ${Object.keys(cart).length !== 0 ? 'translate-x-0' : 'translate-x-full'} transform transition-transform`}> */}
 
@@ -86,7 +84,7 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromToCart, clearCart, su
                         {Object.keys(cart).map((k) => {
                           return <li className="flex py-6" key={k}>
                             <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                              <Image width={200} height={80} loading="lazy" alt="ecommerce" className="h-24 w-24 object-cover object-center rounded" src={cart[k].img} />
+                              <Image width={200} height={80} loading="lazy" alt="ecommerce" className="h-24 w-24 object-cover object-center rounded" src={`/${cart[k].img}`} />
                             </div>
                             <div className="ml-4 flex flex-1 flex-col">
                               <div>

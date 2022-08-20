@@ -1,13 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState } from 'react'
 
-import Contact from "./contact";
-
 const About = () => {
-
-
-
-
     
     const router = useRouter();
     const [name, setName] = useState('')
@@ -20,7 +14,6 @@ const About = () => {
         }
         else if (e.target.name == "email") {
             setEmail(e.target.value)
-
         }
         setTimeout(() => {
             if (name.length > 3 && email.length > 3) {
