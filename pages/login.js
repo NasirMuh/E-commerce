@@ -15,7 +15,7 @@ const Login = () => {
     if(localStorage.getItem('token')){
         router.push('/')
     }
-    }, [])
+    })
     
 
     const SubmitFormData = async (e) => {

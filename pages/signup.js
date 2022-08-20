@@ -17,7 +17,7 @@ const Signup = () => {
         if(localStorage.getItem('token')){
             router.push('/')
         }
-        }, [])
+        })
         
 
     const SubmitFormData = async (e) => {

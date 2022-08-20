@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { AiOutlineShoppingCart, AiFillCloseCircle, AiFillMinusCircle } from 'react-icons/ai';
 import { BsFillPlusCircleFill, BsBagPlus } from 'react-icons/bs';
 import { MdAccountCircle } from 'react-icons/md';
+import Image from 'next/image';
 
 import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -14,14 +15,14 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromToCart, clearCart, su
 
   const [sidebar, setSidebar] = useState(false)
 
-  useEffect(() => {
-    Object.keys(cart).length !== 0 && setSidebar(true)
-    let exempted = ['/checkout', '/order','/orders','/myaccount']
-    if (exempted.includes(router.pathname)) {
-      setSidebar(false)
-    }
+  // useEffect(() => {
+  //   Object.keys(cart).length !== 0 && setSidebar(true)
+  //   let exempted = ['/checkout', '/order','/orders','/myaccount']
+  //   if (exempted.includes(router.pathname)) {
+  //     setSidebar(false)
+  //   }
 
-  }, [])
+  // }, [])
 
   const toggleClass = () => {
     setSidebar(!sidebar)
@@ -85,7 +86,7 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromToCart, clearCart, su
                         {Object.keys(cart).map((k) => {
                           return <li className="flex py-6" key={k}>
                             <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                              <img alt="ecommerce" className="h-24 w-24 object-cover object-center rounded" src={cart[k].img} />
+                              <Image width={200} height={80} loading="lazy" alt="ecommerce" className="h-24 w-24 object-cover object-center rounded" src={cart[k].img} />
                             </div>
                             <div className="ml-4 flex flex-1 flex-col">
                               <div>

@@ -14,7 +14,7 @@ const Forgot = () => {
         if (localStorage.getItem('token')) {
             router.push('/')
         }
-    }, [])
+    })
 
 
     const ChangeHandle = (e) => {

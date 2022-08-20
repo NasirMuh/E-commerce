@@ -13,29 +13,31 @@ function MyApp({ Component, pageProps }) {
   const [progress, setProgress] = useState(0)
   const router = useRouter()
 
-  useEffect(() => {
-    router.events.on("routeChangeStart", () => {
-      setProgress(40)
-    })
-    router.events.on("routeChangeComplete", () => {
-      setProgress(100)
-    })
-    try {
-      if (localStorage.getItem('cart')) {
-        setCart(JSON.parse(localStorage.getItem('cart')))
-        saveCart(JSON.parse(localStorage.getItem('cart')))
+  // useEffect(() => {
+  //   router.events.on("routeChangeStart", () => {
+  //     setProgress(40)
+  //   })
+  //   router.events.on("routeChangeComplete", () => {
+  //     setProgress(100)
+  //   })
+  //   try {
+  //     if (localStorage.getItem('cart')) {
+  //       setCart(JSON.parse(localStorage.getItem('cart')))
+  //       saveCart(JSON.parse(localStorage.getItem('cart')))
 
-      }
-    } catch (error) {
-      console.error(error)
-      localStorage.clear
-    }
-    const token = localStorage.getItem('token')
-    if (token) {
-      setUser({ value: token })
-      setKey(Math.random())
-    }
-  }, [router.query])
+  //     }
+  //   } catch (error) {
+  //     console.error(error)
+  //     localStorage.clear
+  //   }
+  //   const token = localStorage.getItem('token')
+  //   if (token) {
+  //     setUser({ value: token })
+  //     setKey(Math.random())
+  //   }
+  // })
+// }, [router.query])
+
 
   const logout = () => {
     localStorage.removeItem("token")

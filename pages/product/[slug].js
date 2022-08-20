@@ -1,21 +1,18 @@
 import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
-import { useState } from 'react'
+import React, { useEffect ,useState } from 'react'
 import mongoose from 'mongoose'
 import Product from '../../models/Product'
 import Error from 'next/error'
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Image from 'next/image';
+
 
 const Post = ({ buyNow, addToCart, product, variants, error }) => {
-
-  console.log(product, variants)
 
   const router = useRouter()
   const { slug } = router.query.slug;
   // const slug = router.query.slug;
-
 
   const [pin, setPin] = useState();
   const [service, setService] = useState();
@@ -23,14 +20,12 @@ const Post = ({ buyNow, addToCart, product, variants, error }) => {
   const [color, setColor] = useState()
   const [size, setSize] = useState()
 
-  useEffect(() => {
-    if(!error){
-      setColor(product.color)
-      setSize(product.size)
-    }
-
-
-  }, [router.query])
+  // useEffect(() => {
+  //   if(!error){
+  //     setColor(product.color)
+  //     setSize(product.size)
+  //   }
+  // },[product.color])
 
 
   const checkServiceA = async () => {
@@ -98,7 +93,7 @@ const Post = ({ buyNow, addToCart, product, variants, error }) => {
         />
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
-            <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={`/${product.img}`} />
+            <Image width={200} height={80} loading="lazy" alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={`/${product.img}`} />
 
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>

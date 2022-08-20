@@ -14,15 +14,15 @@ const MyAccount = () => {
     // const [state, setState] = useState('')
     // const [city, setCity] = useState('')
 
-    useEffect(() => {
-        if (!localStorage.getItem('token')) {
-            router.push('/')
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (!localStorage.getItem('token')) {
+    //         router.push('/')
+    //     }
+    // })
 
     const HandleUserSubmit = async () => {
         let data = { token: User.token }
-        console.log(data)
+        // console.log(data)
         let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
             method: 'POST',
             headers: {
@@ -31,7 +31,7 @@ const MyAccount = () => {
             body: JSON.stringify(data)
         })
         let response = await res.json();
-        console.log(response);
+        // console.log(response);
     }
 
     const HandleInput = async (e) => {

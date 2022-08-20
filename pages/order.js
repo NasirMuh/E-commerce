@@ -1,6 +1,7 @@
 import React from 'react'
 import mongoose from 'mongoose'
 import Order from '../models/Order'
+import Image from 'next/image';
 
 const MyOrder = ({ order }) => {
   console.log(order);
@@ -41,7 +42,7 @@ const MyOrder = ({ order }) => {
                 </button>
               </div>
             </div>
-            <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400" />
+            <Image width={200} height={80} loading="lazy" alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400" />
           </div>
         </div>
       </section>
