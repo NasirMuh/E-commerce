@@ -40,7 +40,6 @@ const MyAccount = () => {
         }
         else if (e.target.name == "email") {
             setEmail(e.target.value)
-
         }
         else if (e.target.name == "address") {
             setAddress(e.target.value)
@@ -58,7 +57,6 @@ const MyAccount = () => {
             <div className="lg:w-1/2 md:w-2/3 mx-auto">
                 <h2 className='font-semibold text-left mx-4 text-semibold'>1. Delivery</h2>
                 <div className="flex flex-wrap mx-2">
-
                     <div className="p-2 w-1/2">
                         <div className="relative">
                             <label htmlFor="name" className="leading-7 text-sm text-gray-600">Name</label>
@@ -89,9 +87,6 @@ const MyAccount = () => {
                             <input onChange={HandleInput} value={pincode} type="pincode" id="pincode" name="pincode" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
                     </div>
-
-
-
                 </div>
                 <button onClick={HandleUserSubmit} className="flex w-30 mt-5 mx-4 text-center text-white bg-indigo-500 border-0 py-2 px-3 focus:outline-none hover:bg-indigo-600 rounded">Submit</button>
             </div>
